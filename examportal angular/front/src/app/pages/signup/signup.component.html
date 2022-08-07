@@ -4,24 +4,25 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-6 offset-md-3">
                 <div class="container text-center">
-                    <img src="../../../assets/logo2.jpg" width="100px" height="100px" class="rounded" alt="">
+                    <img src="../../../assets/logo3.png" width="100px" height="100px" class="rounded" alt="">
                 </div>
-                <h1 class="text-center">Register here</h1>
-                {{user|json}}
+                <h1 class="text-center">Register</h1>
+                <!-- {{user|json}} -->
                 <form  (ngSubmit)="formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
-                        <input
+                        <input required
                         [(ngModel)]="user.username" 
                         name="username"
                         matInput 
                         placeholder="Username">
                         
+                        <mat-hint>Username must be unique</mat-hint>
                         
                       </mat-form-field>
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input 
+                        <input required
                         [(ngModel)]="user.password" 
                         name="password"
                         type="password"
@@ -32,7 +33,7 @@
                       </mat-form-field>
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input
+                        <input required
                         [(ngModel)]="user.firstname" 
                         name="firstname"
                          matInput placeholder="First Name">
@@ -41,7 +42,7 @@
                       </mat-form-field>
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input
+                        <input required
                         [(ngModel)]="user.lastname" 
                         name="lastname"
                         matInput placeholder="Last Name">
@@ -50,7 +51,7 @@
                       </mat-form-field>
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input 
+                        <input required
                         [(ngModel)]="user.email" 
                         name="email"
                         matInput placeholder="Email" type="email">
@@ -59,7 +60,7 @@
                       </mat-form-field>
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Phone</mat-label>
-                        <input 
+                        <input required
                         [(ngModel)]="user.phone" 
                         name="phone"
                         matInput placeholder="Phone" type="number">
