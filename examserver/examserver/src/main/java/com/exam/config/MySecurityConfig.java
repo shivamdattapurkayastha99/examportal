@@ -31,6 +31,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsServiceImpl userDetailsServiceImpl;
 
     @Override
+    @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
@@ -40,6 +41,11 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
 
     }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(this.userDetailsServiceImpl).passwordEncoder(passwordEncoder());
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http
@@ -61,8 +67,5 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(this.userDetailsServiceImpl).passwordEncoder(passwordEncoder());
-    }
+
 }

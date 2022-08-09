@@ -10,11 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @RestController
+@CrossOrigin("*")
 public class AuthenticateController {
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -50,5 +51,10 @@ public class AuthenticateController {
         catch (BadCredentialsException e){
             throw new Exception("Bad credentials"+e.getMessage());
         }
+    }
+    @GetMapping("/current-user")
+    public User getCurrentUser(Principal principal){
+        return (User) this.userDetailsService.loadUserByUsername(principal.getName());
+
     }
 }
