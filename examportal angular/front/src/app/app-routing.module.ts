@@ -8,7 +8,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
-
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 const routes: Routes = [
   {
     path:'signup',
@@ -34,6 +34,10 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent,
+      },
+      {
+        path:'',
+        component:WelcomeComponent,
       },
     ]
 
