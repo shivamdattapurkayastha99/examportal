@@ -9,6 +9,13 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 const routes: Routes = [
   {
     path:'signup',
@@ -38,6 +45,34 @@ const routes: Routes = [
       {
         path:'',
         component:WelcomeComponent,
+      },
+      {
+        path:'categories',
+        component:ViewCategoriesComponent,
+      },
+      {
+        path:'add-category',
+        component:AddCategoryComponent,
+      },
+      {
+        path:'quizzes',
+        component:ViewQuizzesComponent,
+      },
+      {
+        path:'add-quiz',
+        component:AddQuizComponent,
+      },
+      {
+        path:'quiz/:qid',
+        component:UpdateQuizComponent,
+      },
+      {
+        path:'view-questions/:qid/:title',
+        component:ViewQuizQuestionsComponent,
+      },
+      {
+        path:'add-question/:qid/:title',
+        component:AddQuestionComponent,
       },
     ]
 
