@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 export class InstructionsComponent implements OnInit {
 qid:any
 quiz:any
-  constructor(private _route:ActivatedRoute,private _quiz:QuizService) { }
+  constructor(private _route:ActivatedRoute,private _quiz:QuizService,private _router:Router) { }
 
   ngOnInit(): void {
     this.qid=this._route.snapshot.params.qid
@@ -24,6 +24,9 @@ quiz:any
       
     }
     )
+  }
+  startQuiz(){
+    this._router.navigate(['/start/'+this.qid])
   }
 
 }

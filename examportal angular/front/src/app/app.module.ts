@@ -38,6 +38,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SidebarComponent as UserSideBar } from './pages/user/sidebar/sidebar.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
     UserSideBar,
     LoadQuizComponent,
     InstructionsComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
