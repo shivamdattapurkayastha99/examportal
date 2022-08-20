@@ -67,7 +67,7 @@ return this._quiz.addQuiz(this.quizData).subscribe(
     };
     
   },
-  (error)=>{
+  (error:any)=>{
     console.log("error");
     
   });

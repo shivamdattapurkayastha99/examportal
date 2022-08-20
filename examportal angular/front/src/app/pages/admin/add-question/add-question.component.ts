@@ -33,7 +33,7 @@ question={
   ) { }
 
   ngOnInit(): void {
-    this.qId=this._route.snapshot.params.qId;
+    this.qId=this._route.snapshot.params.qid;
     this.qTitle=this._route.snapshot.params.title;
 
     this.question.quiz['qId']=this.qId;

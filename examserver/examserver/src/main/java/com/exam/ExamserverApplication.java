@@ -41,23 +41,23 @@ public class ExamserverApplication implements CommandLineRunner {
 //		role1.setRoleName("ADMIN");
 //
 //
-		User user=new User();
-		user.setFirstname("Shivam787");
-		user.setLastname("Datta787");
-		user.setUsername("shivam787");
-		user.setPassword(this.bCryptPasswordEncoder.encode("root"));
-		user.setEmail("shivam787@gmail.com");
-		user.setProfile("default.png");
-		Role role1=new Role();
-		role1.setRoleId(45L);
-		role1.setRoleName("NORMAL");
-		Set<UserRole> userRoleSet=new HashSet<>();
-		UserRole userRole=new UserRole();
-		userRole.setRole(role1);
-		userRole.setUser(user);
-		userRoleSet.add(userRole);
-		User user1=this.userService.createUser(user,userRoleSet);
-		System.out.println(user1.getUsername());
+//		User user=new User();
+//		user.setFirstname("Shivam787");
+//		user.setLastname("Datta787");
+//		user.setUsername("shivam787");
+//		user.setPassword(this.bCryptPasswordEncoder.encode("root"));
+//		user.setEmail("shivam787@gmail.com");
+//		user.setProfile("default.png");
+//		Role role1=new Role();
+//		role1.setRoleId(45L);
+//		role1.setRoleName("NORMAL");
+//		Set<UserRole> userRoleSet=new HashSet<>();
+//		UserRole userRole=new UserRole();
+//		userRole.setRole(role1);
+//		userRole.setUser(user);
+//		userRoleSet.add(userRole);
+//		User user1=this.userService.createUser(user,userRoleSet);
+//		System.out.println(user1.getUsername());
 
 
 
